@@ -77,26 +77,27 @@
                     </view>
                     <connections>
                         <outlet property="categoryPicker" destination="Ual-9c-YAA" id="OHh-c2-o0B"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="gotoQuiz" id="9p3-8F-na0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ah-jw-fhe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1055.072463768116" y="121.875"/>
+            <point key="canvasLocation" x="-1065" y="117"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pop_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SmileQuestionMark" translatesAutoresizingMaskIntoConstraints="NO" id="nEw-DZ-qjN">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pop Quiz!" borderStyle="roundedRect" placeholder="Quiz Interface" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HAY-za-xuT">
-                                <rect key="frame" x="103.5" y="119" width="207.5" height="45.5"/>
+                                <rect key="frame" x="103.5" y="75" width="207.5" height="45.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45.5" id="Ikp-mF-BP4"/>
                                 </constraints>
@@ -221,7 +222,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="aoJ-Et-3Tj">
-                                <rect key="frame" x="88" y="822" width="238" height="30"/>
+                                <rect key="frame" x="88" y="768" width="238" height="30"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="238" id="8Dk-Sq-BJl"/>

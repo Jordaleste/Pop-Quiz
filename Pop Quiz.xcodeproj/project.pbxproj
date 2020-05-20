@@ -103,8 +103,8 @@
 		8240B544246EED61009DC5B4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8240B542246EED59009DC5B4 /* QuestionManager.swift */,
 				72A27F2A2474110400454578 /* CategoryManager.swift */,
+				8240B542246EED59009DC5B4 /* QuestionManager.swift */,
 				8240B545246EF6FA009DC5B4 /* QuestionData.swift */,
 				8240B547246EFBF8009DC5B4 /* QuestionModel.swift */,
 				8240B549246F48CA009DC5B4 /* QuizBrain.swift */,

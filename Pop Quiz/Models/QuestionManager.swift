@@ -20,15 +20,16 @@ struct QuestionManager {
     
     //QuizBrain will pass in the category id, nil is default
     func fetchQuestions(category: Int? = nil) {
-        
         //Base URL for API
         var urlString = "https://opentdb.com/api.php?amount=10"
         
         //Add category chosen for API
         if let category = category {
             urlString += "&category=\(category)"
+            print("Chosen Category: \(urlString)")
         }
         if let url = URL(string: urlString) {
+            print("All Questions \(urlString)")
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error != nil {

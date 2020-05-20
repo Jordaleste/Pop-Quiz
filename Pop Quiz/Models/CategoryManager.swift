@@ -10,7 +10,19 @@ import Foundation
 
 struct CategoryManager {
     static let categories = [
-        "Science": 11,
-        "Math": 12
+        //need to handle all questions, ie no category
+        "All Questions": nil,
+        "General Knowledge": 9,
+        "Entertainment: Books": 10,
+        "Entertainment: Film": 11,
+        "Entertainment: Music": 12,
+        "Entertainment: Television": 14,
+        "Entertainment: Video Games": 15,
+        "Science & Nature": 17,
+        "Science: Computers": 18,
+        "Sports": 21,
+        "Geography": 22,
+        "History": 23,
+        "Entertainment: Japanese Anime & Manga": 31
     ]
 }

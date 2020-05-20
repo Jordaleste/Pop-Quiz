@@ -16,27 +16,25 @@ class WelcomeViewController: UIViewController {
     
     @IBOutlet weak var categoryPicker: UIPickerView!
     
-    var categories = ["Category 1", "Category 2", "Category 3"]
-    
+    let categories = CategoryManager.categories.map( {$0.key}).sorted()
     lazy var chosenCategory = categories[0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.categoryPicker.delegate = self
         self.categoryPicker.dataSource = self
-        print(chosenCategory)
     }
     
     
     @IBAction func startButtonPressed(_ sender: UIButton) {
         
-           //if picker.value == "Allquestions" {
-              //QuizBrain.shared.categoryChosen = nil }
-              //else { put quizbrain.shared below here }
-              
-              //pass value to quizbrain
-              QuizBrain.shared.categoryChosen = chosenCategory
-              //load segue to ViewController
+        //if picker.value == "Allquestions" {
+        //QuizBrain.shared.categoryChosen = nil }
+        //else { put quizbrain.shared below here }
+        
+        //pass value to quizbrain
+        QuizBrain.shared.categoryChosen = chosenCategory
+        self.performSegue(withIdentifier: "gotoQuiz", sender: self)
     }
 
 }

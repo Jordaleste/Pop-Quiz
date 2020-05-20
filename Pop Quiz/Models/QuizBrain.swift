@@ -29,8 +29,7 @@ class QuizBrain {
     
     var score = 0
     
-    func loadNewQuiz() {
-        
+    func loadNewQuiz(_ chosenCategory: String) {
         questionArray = []
         correctAnswerArray = []
         incorrectAnswersArray = []

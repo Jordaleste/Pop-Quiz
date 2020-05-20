@@ -29,10 +29,9 @@ class ViewController: UIViewController, QuizBrainDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Set our newGame as the delegate of this instance of QuizBrain
         newGame.delegate = self
-        newGame.loadNewQuiz()
+        newGame.loadNewQuiz(newGame.categoryChosen!) 
         questionLabel.layer.cornerRadius = 5
         questionLabel.clipsToBounds = true
         scoreButtonLabel.layer.cornerRadius = 5
@@ -108,7 +107,7 @@ class ViewController: UIViewController, QuizBrainDelegate {
         scoreButtonLabel.setTitleColor(.white, for: .normal)
         scoreButtonLabel.setTitle("Score: \(newGame.getScore())", for: .normal)
 
-        newGame.loadNewQuiz()
+        newGame.loadNewQuiz(newGame.categoryChosen!)
     }
     
     func gameOver() {
