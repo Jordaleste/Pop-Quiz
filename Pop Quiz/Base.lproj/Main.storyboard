@@ -15,22 +15,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E24-9j-ykN">
-                                <rect key="frame" x="120" y="375" width="157" height="185"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SmileQuestionMark" translatesAutoresizingMaskIntoConstraints="NO" id="LHs-Ky-DM3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pop Quiz!" borderStyle="roundedRect" placeholder="Quiz Interface" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y6e-fZ-x5n">
+                                <rect key="frame" x="103.5" y="119" width="207.5" height="45.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45.5" id="XHr-6r-hNy"/>
+                                </constraints>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Choose Your Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3L-ht-1sS">
+                                <rect key="frame" x="57" y="239.5" width="300" height="27.5"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="8VL-Zq-tg8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ual-9c-YAA">
+                                <rect key="frame" x="47" y="307" width="320" height="212"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="yr6-wO-Le9">
+                                <rect key="frame" x="88" y="822" width="238" height="30"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="238" id="thR-0K-Cpq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Start Game">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <action selector="startButtonPressed:" destination="iNH-hg-KAY" eventType="touchUpInside" id="9JR-d6-ebU"/>
+                                    <action selector="startButtonPressed:" destination="iNH-hg-KAY" eventType="touchUpInside" id="JDj-hm-v4t"/>
+                                    <action selector="startOverButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RkO-Qy-sMe"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="LHs-Ky-DM3" firstAttribute="trailing" secondItem="FiA-70-gb7" secondAttribute="trailing" id="HJx-kf-xp6"/>
+                            <constraint firstItem="Ual-9c-YAA" firstAttribute="centerX" secondItem="MAc-Ow-wgm" secondAttribute="centerX" id="Nq7-Vf-3BH"/>
+                            <constraint firstItem="yr6-wO-Le9" firstAttribute="centerX" secondItem="MAc-Ow-wgm" secondAttribute="centerX" id="PBs-WH-h9l"/>
+                            <constraint firstItem="y6e-fZ-x5n" firstAttribute="top" relation="lessThanOrEqual" secondItem="FiA-70-gb7" secondAttribute="top" constant="75" id="WMT-SP-NWE"/>
+                            <constraint firstItem="y6e-fZ-x5n" firstAttribute="centerX" secondItem="MAc-Ow-wgm" secondAttribute="centerX" id="ZYj-H4-YsA"/>
+                            <constraint firstItem="FiA-70-gb7" firstAttribute="bottom" secondItem="yr6-wO-Le9" secondAttribute="bottom" constant="10" id="bWQ-AH-meQ"/>
+                            <constraint firstItem="Ual-9c-YAA" firstAttribute="top" secondItem="l3L-ht-1sS" secondAttribute="bottom" constant="40" id="bwQ-oO-qNQ"/>
+                            <constraint firstItem="LHs-Ky-DM3" firstAttribute="leading" secondItem="FiA-70-gb7" secondAttribute="leading" id="dRX-fX-emQ"/>
+                            <constraint firstItem="l3L-ht-1sS" firstAttribute="centerX" secondItem="MAc-Ow-wgm" secondAttribute="centerX" id="dYZ-9Q-heN"/>
+                            <constraint firstItem="LHs-Ky-DM3" firstAttribute="top" secondItem="MAc-Ow-wgm" secondAttribute="top" id="dtR-qX-8cl"/>
+                            <constraint firstAttribute="bottom" secondItem="LHs-Ky-DM3" secondAttribute="bottom" id="iQW-Z4-eHb"/>
+                            <constraint firstItem="l3L-ht-1sS" firstAttribute="top" secondItem="y6e-fZ-x5n" secondAttribute="bottom" constant="75" id="sn4-gO-H7a"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FiA-70-gb7"/>
                     </view>
+                    <connections>
+                        <outlet property="categoryPicker" destination="Ual-9c-YAA" id="OHh-c2-o0B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ah-jw-fhe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1050.7246376811595" y="95.089285714285708"/>
+            <point key="canvasLocation" x="-1055.072463768116" y="121.875"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
