@@ -10,6 +10,10 @@ import Foundation
 
 class QuizBrain {
     
+    // Setting up singleton to handle data management from multiple view controllers
+    static let shared = QuizBrain()
+    var categoryChosen: String? = nil
+    
     // QuizBrain has a delegate property so it can be set by it's delegate as self. Our ViewController's "newGame" set's itself as the delegate for QuizBrain
     var delegate: QuizBrainDelegate?
     
@@ -26,13 +30,23 @@ class QuizBrain {
     var score = 0
     
     func loadNewQuiz() {
+        
+        questionArray = []
+        correctAnswerArray = []
+        incorrectAnswersArray = []
         questionNumber = 0
         
         //Set our quiz as the delegate of this instance of QuestionManager
         self.quiz.delegate = self
         
-         // Get new set of questions as an instance of QuestionManager
-        quiz.fetchQuestions()
+        //getting category ID from CategoryManager
+        var id: Int?
+        if let category = categoryChosen {
+        guard let categoryID = CategoryManager.categories[category] else {fatalError("Category chosen does not exist")}
+            id = categoryID
+        }
+         // Get new set of questions as an instance of QuestionManager passing in the cattegory chosen id
+        quiz.fetchQuestions(category: id) //need to pass in category ID here
     }
     
     func getQuestion() -> String {
