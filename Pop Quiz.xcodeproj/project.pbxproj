@@ -19,6 +19,7 @@
 		8240B546246EF6FA009DC5B4 /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8240B545246EF6FA009DC5B4 /* QuestionData.swift */; };
 		8240B548246EFBF8009DC5B4 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8240B547246EFBF8009DC5B4 /* QuestionModel.swift */; };
 		8240B54A246F48CA009DC5B4 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8240B549246F48CA009DC5B4 /* QuizBrain.swift */; };
+		9789F2602474D1EC00B0651C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9789F25F2474D1EC00B0651C /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		8240B545246EF6FA009DC5B4 /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
 		8240B547246EFBF8009DC5B4 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		8240B549246F48CA009DC5B4 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
+		9789F25F2474D1EC00B0651C /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				8240B52B246C9544009DC5B4 /* AppDelegate.swift */,
 				8240B52D246C9544009DC5B4 /* SceneDelegate.swift */,
 				8240B52F246C9544009DC5B4 /* ViewController.swift */,
+				9789F25F2474D1EC00B0651C /* WelcomeViewController.swift */,
 				8240B544246EED61009DC5B4 /* Models */,
 				8240B541246CD43D009DC5B4 /* SwiftUI Views */,
 				8240B531246C9544009DC5B4 /* Main.storyboard */,
@@ -173,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8240B548246EFBF8009DC5B4 /* QuestionModel.swift in Sources */,
+				9789F2602474D1EC00B0651C /* WelcomeViewController.swift in Sources */,
 				8240B530246C9544009DC5B4 /* ViewController.swift in Sources */,
 				72A27F2B2474110400454578 /* CategoryManager.swift in Sources */,
 				8240B52C246C9544009DC5B4 /* AppDelegate.swift in Sources */,

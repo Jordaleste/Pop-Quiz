@@ -24,8 +24,9 @@ class ViewController: UIViewController, QuizBrainDelegate {
     lazy var buttonArray = [aButton, bButton, cButton, dButton]
     
     // Get new game, instance of QuizBrain
-    var newGame = QuizBrain()
-    
+    // Using a singleton shared instance to allow passing of values from multiple view controllers
+    var newGame = QuizBrain.shared
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -94,7 +95,7 @@ class ViewController: UIViewController, QuizBrainDelegate {
     }
     
     @IBAction func startOverButtonPressed(_ sender: UIButton) {
-        newGame = QuizBrain()
+        
         
         for i in self.buttonArray {
             i?.backgroundColor = .white
@@ -106,7 +107,7 @@ class ViewController: UIViewController, QuizBrainDelegate {
         scoreButtonLabel.backgroundColor = .red
         scoreButtonLabel.setTitleColor(.white, for: .normal)
         scoreButtonLabel.setTitle("Score: \(newGame.getScore())", for: .normal)
-        newGame.delegate = self
+
         newGame.loadNewQuiz()
     }
     

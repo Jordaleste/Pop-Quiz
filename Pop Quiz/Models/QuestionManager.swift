@@ -13,18 +13,22 @@ import Foundation
 struct QuestionManager {
     
     //Set here to allow to adjust in future updates user choice of quiz type, etc...
-    let questionURL = "https://opentdb.com/api.php?amount=10"
+    
     
     // QuestionManager has a delegate property so it can be set by it's delegate as self. Our QuizBrain's "quiz" set's itself as the delegate for QuestionManager
     var delegate: QuestionManagerDelegate?
     
-    let categories = CategoryManager()
-    
-    func fetchQuestions() {
+    //QuizBrain will pass in the category id, nil is default
+    func fetchQuestions(category: Int? = nil) {
         
-        print("Category Chosen: \(categories.categoryDictionary["Science"])")
+        //Base URL for API
+        var urlString = "https://opentdb.com/api.php?amount=10"
         
-        if let url = URL(string: "https://opentdb.com/api.php?amount=10") {
+        //Add category chosen for API
+        if let category = category {
+            urlString += "&category=\(category)"
+        }
+        if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error != nil {

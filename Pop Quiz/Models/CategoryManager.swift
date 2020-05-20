@@ -9,8 +9,7 @@
 import Foundation
 
 struct CategoryManager {
-    
-    let categoryDictionary = [
+    static let categories = [
         "Science": 11,
         "Math": 12
     ]
