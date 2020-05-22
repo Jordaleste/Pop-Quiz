@@ -38,7 +38,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView alpha="0.90000000000000002" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ual-9c-YAA">
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ual-9c-YAA">
                                 <rect key="frame" x="47" y="307" width="320" height="212"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pickerView>
@@ -58,7 +58,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="LHs-Ky-DM3" firstAttribute="trailing" secondItem="FiA-70-gb7" secondAttribute="trailing" id="HJx-kf-xp6"/>
                             <constraint firstItem="Ual-9c-YAA" firstAttribute="centerX" secondItem="MAc-Ow-wgm" secondAttribute="centerX" id="Nq7-Vf-3BH"/>
@@ -222,12 +222,13 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="aoJ-Et-3Tj">
-                                <rect key="frame" x="88" y="766" width="238" height="32"/>
+                                <rect key="frame" x="69.5" y="748" width="275" height="50"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="238" id="8Dk-Sq-BJl"/>
+                                    <constraint firstAttribute="width" constant="275" id="8Dk-Sq-BJl"/>
+                                    <constraint firstAttribute="height" constant="50" id="EQw-yM-m8y"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Number of Correct Answers: 0  Score: 0">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -283,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-313" y="122"/>
+            <point key="canvasLocation" x="-313.04347826086956" y="121.875"/>
         </scene>
     </scenes>
     <resources>

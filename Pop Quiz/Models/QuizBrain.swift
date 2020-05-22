@@ -68,15 +68,8 @@ class QuizBrain {
         return answersRandomized
     }
     
-    func nextQuestion() { //may not need the else, need to check
+    func nextQuestion() { 
         questionNumber += 1
-//        if questionNumber + 1 < questionArray.count {
-//            questionNumber += 1
-//        } else {
-//            questionNumber = 0
-//            print("New game started")
-//            score = 0
-//        }
     }
     
     func checkAnswer(_ userAnswer: String, _ counter: Int) -> Bool {

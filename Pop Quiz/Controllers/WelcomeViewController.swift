@@ -9,9 +9,6 @@
 import Foundation
 import UIKit
 
-// Next fill out UI, make segue to VC
-// Test App
-
 class WelcomeViewController: UIViewController {
     
     @IBOutlet weak var categoryPicker: UIPickerView!
@@ -28,11 +25,6 @@ class WelcomeViewController: UIViewController {
     
     @IBAction func startButtonPressed(_ sender: UIButton) {
         
-        //if picker.value == "Allquestions" {
-        //QuizBrain.shared.categoryChosen = nil }
-        //else { put quizbrain.shared below here }
-        
-        //pass value to quizbrain
         QuizBrain.shared.categoryChosen = chosenCategory
         self.performSegue(withIdentifier: "gotoQuiz", sender: self)
     }
@@ -58,19 +50,16 @@ extension WelcomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         print(chosenCategory)
         
     }
-   
-//    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-//
-//        return NSAttributedString(string: categories[row], attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
-//    }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView
     {
         let pickerLabel = UILabel()
         
         pickerLabel.text = categories[row]
-        pickerLabel.textColor = UIColor.red
         pickerLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        pickerLabel.layer.borderColor = UIColor.red.cgColor
+        pickerLabel.layer.borderWidth = 2
+        pickerLabel.backgroundColor = .yellow
         
         pickerLabel.textAlignment = NSTextAlignment.center
         return pickerLabel

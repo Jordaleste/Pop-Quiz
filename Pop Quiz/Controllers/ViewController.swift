@@ -41,6 +41,7 @@ class ViewController: UIViewController, QuizBrainDelegate {
         scoreButtonLabel.layer.cornerRadius = 5
         scoreButtonLabel.clipsToBounds = true
         
+        
         for button in buttonArray {
             button?.titleLabel?.minimumScaleFactor = 0.5
             button?.titleLabel?.numberOfLines = 1
