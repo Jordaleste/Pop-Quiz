@@ -95,19 +95,22 @@ class ViewController: UIViewController, QuizBrainDelegate {
     
     @IBAction func startOverButtonPressed(_ sender: UIButton) {
         
-        
-        for i in self.buttonArray {
-            i?.backgroundColor = .white
-            i?.setTitleColor(.red, for: .normal)
-            i?.isHidden = false
-            i?.isUserInteractionEnabled = true
+        dismiss(animated: true) {
+            
         }
-        
-        scoreButtonLabel.backgroundColor = .red
-        scoreButtonLabel.setTitleColor(.white, for: .normal)
-        scoreButtonLabel.setTitle("Score: \(newGame.getScore())", for: .normal)
-
-        newGame.loadNewQuiz(newGame.categoryChosen!)
+//        Code to reset the game if same category is selected provided we program an additional option later
+//        for i in self.buttonArray {
+//            i?.backgroundColor = .white
+//            i?.setTitleColor(.red, for: .normal)
+//            i?.isHidden = false
+//            i?.isUserInteractionEnabled = true
+//        }
+//        
+//        scoreButtonLabel.backgroundColor = .red
+//        scoreButtonLabel.setTitleColor(.white, for: .normal)
+//        scoreButtonLabel.setTitle("Score: \(newGame.getScore())", for: .normal)
+//
+//        newGame.loadNewQuiz(newGame.categoryChosen!)
     }
     
     func gameOver() {

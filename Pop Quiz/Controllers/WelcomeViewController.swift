@@ -38,6 +38,7 @@ class WelcomeViewController: UIViewController {
     }
 
 }
+//MARK: - PickView Functions
 
 extension WelcomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -57,7 +58,22 @@ extension WelcomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         print(chosenCategory)
         
     }
+   
+//    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+//
+//        return NSAttributedString(string: categories[row], attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
+//    }
     
-    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView
+    {
+        let pickerLabel = UILabel()
+        
+        pickerLabel.text = categories[row]
+        pickerLabel.textColor = UIColor.red
+        pickerLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        
+        pickerLabel.textAlignment = NSTextAlignment.center
+        return pickerLabel
+    }
     
 }
