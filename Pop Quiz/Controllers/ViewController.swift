@@ -26,6 +26,10 @@ class ViewController: UIViewController, QuizBrainDelegate {
     // Get new game, instance of QuizBrain
     // Using a singleton shared instance to allow passing of values from multiple view controllers
     var newGame = QuizBrain.shared
+    
+    var timer = Timer()
+    var counter = 100
+    var numberOfCorrectAnswers = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +50,9 @@ class ViewController: UIViewController, QuizBrainDelegate {
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         
+        //Stop the score keeping timer
+        timer.invalidate()
+        
         guard let answerChosen = sender.currentTitle else {
             print("No text in sender.currentTitle")
             return
@@ -55,11 +62,14 @@ class ViewController: UIViewController, QuizBrainDelegate {
             i?.isUserInteractionEnabled = false
         }
         
-        let userIsCorrect = newGame.checkAnswer(answerChosen)
+        let userIsCorrect = newGame.checkAnswer(answerChosen, counter)
         
         if userIsCorrect {
+            print("Correct, points: \(counter)")
+            numberOfCorrectAnswers += 1
             sender.backgroundColor = .green
-            scoreButtonLabel.setTitle("Score: \(newGame.getScore())", for: .normal)
+            scoreButtonLabel.setTitle("Number of Correct Answers: \(newGame.getNumberOfCorrectAnswers()):  Score: \(newGame.getScore())", for: .normal)
+            //score should be based on time taken to answer
 
         } else {
             sender.backgroundColor? = .red
@@ -75,6 +85,8 @@ class ViewController: UIViewController, QuizBrainDelegate {
         if self.newGame.isGameOver() {
             self.gameOver()
         } else {
+            //Reset the score keeping counter for next question
+            counter = 100
             
             Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { _ in
                 for i in self.buttonArray {
@@ -117,7 +129,7 @@ class ViewController: UIViewController, QuizBrainDelegate {
         scoreButtonLabel.isUserInteractionEnabled = true
         scoreButtonLabel.backgroundColor = .green
         scoreButtonLabel.setTitleColor(.red, for: .normal)
-        scoreButtonLabel.setTitle("Final Score: \(newGame.getScore()). Play Again?", for: .normal)
+        scoreButtonLabel.setTitle("Number of Correct Answers: \(newGame.getNumberOfCorrectAnswers()): Final Score: \(newGame.getScore()). Play Again?", for: .normal)
     }
     
     func updateUI() {
@@ -142,6 +154,19 @@ class ViewController: UIViewController, QuizBrainDelegate {
             self.cButtonLabel.isHidden = true
             self.dButton.isHidden = true
             self.dButtonLabel.isHidden = true
+        }
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+            self.counter -= 1
+            
+            if self.counter > 50 {
+                print("\(self.counter)")
+            } else {
+                self.timer.invalidate()
+                print("Final Score: \(self.counter)")
+            }
+            
+            //if answer is correct, add to score based on time. If incorrect, do not add to score
         }
     }
     

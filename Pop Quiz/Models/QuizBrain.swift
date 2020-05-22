@@ -28,12 +28,15 @@ class QuizBrain {
     var incorrectAnswersArray = [[String]]()
     
     var score = 0
+    var numberOfCorrectAnswers = 0
     
     func loadNewQuiz(_ chosenCategory: String) {
         questionArray = []
         correctAnswerArray = []
         incorrectAnswersArray = []
         questionNumber = 0
+        numberOfCorrectAnswers = 0
+        score = 0
         
         //Set our quiz as the delegate of this instance of QuestionManager
         self.quiz.delegate = self
@@ -65,19 +68,21 @@ class QuizBrain {
         return answersRandomized
     }
     
-    func nextQuestion() {
-        if questionNumber + 1 < questionArray.count {
-            questionNumber += 1
-        } else {
-            questionNumber = 0
-            print("New game started")
-            score = 0
-        }
+    func nextQuestion() { //may not need the else, need to check
+        questionNumber += 1
+//        if questionNumber + 1 < questionArray.count {
+//            questionNumber += 1
+//        } else {
+//            questionNumber = 0
+//            print("New game started")
+//            score = 0
+//        }
     }
     
-    func checkAnswer(_ userAnswer: String) -> Bool {
+    func checkAnswer(_ userAnswer: String, _ counter: Int) -> Bool {
         if userAnswer == correctAnswerArray[questionNumber] {
-            score += 1
+            score += counter
+            numberOfCorrectAnswers += 1
             return true
         } else {
             return false
@@ -86,6 +91,10 @@ class QuizBrain {
     
     func getScore() -> Int {
         return score
+    }
+    
+    func getNumberOfCorrectAnswers() -> Int {
+        return numberOfCorrectAnswers
     }
     
     func isGameOver() -> Bool {
