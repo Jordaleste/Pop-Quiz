@@ -12,6 +12,7 @@ class QuizBrain {
     
     // Setting up singleton to handle data management from multiple view controllers
     static let shared = QuizBrain()
+    let insults = InsultManager()
     var categoryChosen: String? = nil
     
     // QuizBrain has a delegate property so it can be set by it's delegate as self. Our ViewController's "newGame" set's itself as the delegate for QuizBrain
@@ -90,12 +91,45 @@ class QuizBrain {
         return numberOfCorrectAnswers
     }
     
-    func isGameOver() -> Bool {
-        if questionNumber == 9 {
+    func isGameOver() -> Bool { // set to 9 after testing is complete
+        if questionNumber == 3 {
             return true
         } else {
             return false
         }
+    }
+    
+    func getInsult() -> String {
+        
+        var insult: String
+        
+        switch numberOfCorrectAnswers {
+        case 0:
+            insult = "\(insults.tier1Insults.randomElement() ?? "I have nothing to say...")"
+        case 1:
+            insult = "\(insults.tier2Insults.randomElement() ?? "I have nothing to say...")"
+        case 2...7:
+            insult = "\(insults.tier3Insults.randomElement() ?? "I have nothing to say...")"
+        case 8...9:
+            insult = "\(insults.tier4Insults.randomElement() ?? "I have nothing to say...")"
+        case 10:
+            insult = "\(insults.tier5Insults.randomElement() ?? "I have nothing to say...")"
+        default:
+            insult = "I have nothing to say"
+        }
+        
+//        if score == 0 {
+//            saying = "Horrible"
+//        } else if score > 0 && score < 100 {
+//            saying = "From 1 - 99"
+//        } else if score >= 100 && score < 250 {
+//            saying = "From 100 - 249"
+//        } else {
+//            saying = "0"
+//        }
+        
+        
+        return insult
     }
 }
 

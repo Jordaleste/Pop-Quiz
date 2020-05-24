@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19C2E0E2247AC0E800E46A1B /* InsultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C2E0E1247AC0E800E46A1B /* InsultManager.swift */; };
 		72A27F2B2474110400454578 /* CategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A27F2A2474110400454578 /* CategoryManager.swift */; };
 		8240B52C246C9544009DC5B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8240B52B246C9544009DC5B4 /* AppDelegate.swift */; };
 		8240B52E246C9544009DC5B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8240B52D246C9544009DC5B4 /* SceneDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19C2E0E1247AC0E800E46A1B /* InsultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsultManager.swift; sourceTree = "<group>"; };
 		72A27F2A2474110400454578 /* CategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManager.swift; sourceTree = "<group>"; };
 		8240B528246C9544009DC5B4 /* Pop Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pop Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8240B52B246C9544009DC5B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				72A27F2A2474110400454578 /* CategoryManager.swift */,
+				19C2E0E1247AC0E800E46A1B /* InsultManager.swift */,
 				8240B542246EED59009DC5B4 /* QuestionManager.swift */,
 				8240B545246EF6FA009DC5B4 /* QuestionData.swift */,
 				8240B547246EFBF8009DC5B4 /* QuestionModel.swift */,
@@ -192,6 +195,7 @@
 				8240B546246EF6FA009DC5B4 /* QuestionData.swift in Sources */,
 				8240B543246EED59009DC5B4 /* QuestionManager.swift in Sources */,
 				8240B52E246C9544009DC5B4 /* SceneDelegate.swift in Sources */,
+				19C2E0E2247AC0E800E46A1B /* InsultManager.swift in Sources */,
 				8240B54A246F48CA009DC5B4 /* QuizBrain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

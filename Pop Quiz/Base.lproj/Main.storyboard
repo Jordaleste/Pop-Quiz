@@ -246,9 +246,21 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The only way you could score an IQ of 20 is to take the test twice and add the scores together" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkK-JI-NLb">
+                                <rect key="frame" x="69.5" y="677" width="275" height="61"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="RTk-yt-UNi"/>
+                                    <constraint firstAttribute="width" constant="275" id="Z2j-4O-ANL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="aoJ-Et-3Tj" firstAttribute="top" secondItem="qkK-JI-NLb" secondAttribute="bottom" constant="10" id="2Uc-qB-NJo"/>
                             <constraint firstItem="HAY-za-xuT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2vz-Nc-hIF"/>
                             <constraint firstItem="aoJ-Et-3Tj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5hC-T7-YJJ"/>
                             <constraint firstItem="HAY-za-xuT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="98h-8o-FBX"/>
@@ -257,6 +269,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aoJ-Et-3Tj" secondAttribute="bottom" constant="10" id="crn-o2-yAz"/>
                             <constraint firstItem="nEw-DZ-qjN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fM5-VW-kY8"/>
                             <constraint firstItem="nEw-DZ-qjN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fTO-sF-dAg"/>
+                            <constraint firstItem="qkK-JI-NLb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iLf-zh-gNd"/>
                             <constraint firstItem="Xej-n1-8WR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="me9-Hl-uzV"/>
                             <constraint firstAttribute="bottom" secondItem="nEw-DZ-qjN" secondAttribute="bottom" id="rDw-I8-Jt4"/>
                             <constraint firstItem="nEw-DZ-qjN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tza-ci-xdl"/>
@@ -278,6 +291,7 @@
                         <outlet property="cButtonLabel" destination="38E-44-T3k" id="HeC-8c-cRQ"/>
                         <outlet property="dButton" destination="HgG-5A-UN5" id="DVp-nw-8yU"/>
                         <outlet property="dButtonLabel" destination="7FQ-73-b52" id="Afq-KN-k5b"/>
+                        <outlet property="insultButtonLabel" destination="qkK-JI-NLb" id="MN9-98-iLb"/>
                         <outlet property="questionLabel" destination="rfb-az-3kW" id="81y-Vf-mSR"/>
                         <outlet property="scoreButtonLabel" destination="aoJ-Et-3Tj" id="000-Sm-npt"/>
                     </connections>

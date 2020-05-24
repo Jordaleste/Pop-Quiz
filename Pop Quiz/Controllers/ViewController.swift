@@ -18,6 +18,7 @@ class ViewController: UIViewController, QuizBrainDelegate {
     @IBOutlet weak var dButton: UIButton!
     @IBOutlet weak var cButtonLabel: UIButton!
     @IBOutlet weak var dButtonLabel: UIButton!
+    @IBOutlet weak var insultButtonLabel: UILabel!
     @IBOutlet weak var scoreButtonLabel: UIButton!
     
     
@@ -38,6 +39,10 @@ class ViewController: UIViewController, QuizBrainDelegate {
         newGame.loadNewQuiz(newGame.categoryChosen!) 
         questionLabel.layer.cornerRadius = 5
         questionLabel.clipsToBounds = true
+        insultButtonLabel.isHidden = true
+        insultButtonLabel.backgroundColor = .green
+        insultButtonLabel.layer.cornerRadius = 5
+        insultButtonLabel.clipsToBounds = true
         scoreButtonLabel.layer.cornerRadius = 5
         scoreButtonLabel.clipsToBounds = true
         
@@ -127,10 +132,12 @@ class ViewController: UIViewController, QuizBrainDelegate {
     }
     
     func gameOver() {
+        insultButtonLabel.isHidden = false
+        insultButtonLabel.text = "\(newGame.getInsult())"
         scoreButtonLabel.isUserInteractionEnabled = true
         scoreButtonLabel.backgroundColor = .green
         scoreButtonLabel.setTitleColor(.red, for: .normal)
-        scoreButtonLabel.setTitle("Number of Correct Answers: \(newGame.getNumberOfCorrectAnswers()): Final Score: \(newGame.getScore()). Play Again?", for: .normal)
+        scoreButtonLabel.setTitle("Number of Correct Answers: \(newGame.getNumberOfCorrectAnswers())\nFinal Score: \(newGame.getScore()).      Play Again?", for: .normal)
     }
     
     func updateUI() {

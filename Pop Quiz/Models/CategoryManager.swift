@@ -10,7 +10,6 @@ import Foundation
 
 struct CategoryManager {
     static let categories = [
-        //need to handle all questions, ie no category
         "All Questions": nil,
         "General Knowledge": 9,
         "Entertainment: Books": 10,
