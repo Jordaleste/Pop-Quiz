@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, QuizBrainDelegate {
     
     @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var highScoreLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var aButton: UIButton!
     @IBOutlet weak var bButton: UIButton!
@@ -36,7 +37,13 @@ class ViewController: UIViewController, QuizBrainDelegate {
         super.viewDidLoad()
         // Set our newGame as the delegate of this instance of QuizBrain
         newGame.delegate = self
-        newGame.loadNewQuiz(newGame.categoryChosen!) 
+        newGame.loadNewQuiz(newGame.categoryChosen!)
+        //let highScore = newGame.getHighScore()
+        //let categoryHighScore = newGame.getCategoryHighScore()
+        highScoreLabel.layer.cornerRadius = 5
+        highScoreLabel.clipsToBounds = true
+        //TODO: change 500 to highScore and categoryHighScore
+        highScoreLabel.text = "All Time Luckiest Score: 500\n\(QuizBrain.shared.categoryChosen ?? "Chosen Category")\nLuckiest Score: 500"
         questionLabel.layer.cornerRadius = 5
         questionLabel.clipsToBounds = true
         insultButtonLabel.isHidden = true

@@ -22,6 +22,6 @@ struct CategoryManager {
         "Sports": 21,
         "Geography": 22,
         "History": 23,
-        "Entertainment: Japanese Anime & Manga": 31
+        //"Entertainment: Japanese Anime & Manga": 31
     ]
 }
