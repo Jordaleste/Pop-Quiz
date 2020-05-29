@@ -87,12 +87,35 @@ class QuizBrain {
         return score
     }
     
+    func getHighScore() -> Int {
+        //This is 0 by default since we call .integer
+        return UserDefaults.standard.integer(forKey: "highScore")
+    }
+    
+    func getCategoryHighScore(category: String) -> Int {
+        return UserDefaults.standard.integer(forKey: "\(category)HighScore")
+    }
+    
+    func checkHighScore(_ score: Int) {
+        if score > getHighScore() {
+            UserDefaults.standard.set(score, forKey: "highScore")
+        }
+    }
+    
+    func checkCategoryHighScore(category: String, score: Int) {
+        if score > getCategoryHighScore(category: category) {
+            UserDefaults.standard.set(score, forKey: "\(category)HighScore")
+        }
+    }
+    
     func getNumberOfCorrectAnswers() -> Int {
         return numberOfCorrectAnswers
     }
     
     func isGameOver() -> Bool { // set to 9 after testing is complete
         if questionNumber == 3 {
+            checkHighScore(score)
+            checkCategoryHighScore(category: categoryChosen!, score: score)
             return true
         } else {
             return false
