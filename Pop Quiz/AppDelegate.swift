@@ -14,6 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+//        Reset User Default Values
+//        UserDefaults.standard.set(0, forKey: "highScore")
+//        CategoryManager.categories.map {$0.key}.forEach { (category) in
+//            UserDefaults.standard.set(0, forKey: "\(category)HighScore")
+//        }
+        
+        
         // Override point for customization after application launch.
         return true
     }

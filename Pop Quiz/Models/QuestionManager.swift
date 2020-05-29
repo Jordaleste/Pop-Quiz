@@ -26,10 +26,8 @@ struct QuestionManager {
         //Add category chosen for API
         if let category = category {
             urlString += "&category=\(category)"
-            print("Chosen Category: \(urlString)")
         }
         if let url = URL(string: urlString) {
-            print("All Questions \(urlString)")
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error != nil {

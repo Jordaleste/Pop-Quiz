@@ -43,7 +43,7 @@ class ViewController: UIViewController, QuizBrainDelegate {
         highScoreLabel.layer.cornerRadius = 5
         highScoreLabel.clipsToBounds = true
         //TODO: change 500 to highScore and categoryHighScore
-        highScoreLabel.text = "All Time Luckiest Score: 500\n\(QuizBrain.shared.categoryChosen ?? "Chosen Category")\nLuckiest Score: 500"
+        highScoreLabel.text = "All Time Luckiest Score: \(newGame.getHighScore())\n\(newGame.categoryChosen ?? "Chosen Category")\nLuckiest Score: \(newGame.getCategoryHighScore(category: newGame.categoryChosen!))"
         questionLabel.layer.cornerRadius = 5
         questionLabel.clipsToBounds = true
         insultButtonLabel.isHidden = true
@@ -78,7 +78,6 @@ class ViewController: UIViewController, QuizBrainDelegate {
         let userIsCorrect = newGame.checkAnswer(answerChosen, counter)
         
         if userIsCorrect {
-            print("Correct, points: \(counter)")
             numberOfCorrectAnswers += 1
             sender.backgroundColor = .green
             scoreButtonLabel.setTitle("Number of Correct Answers: \(newGame.getNumberOfCorrectAnswers()):  Score: \(newGame.getScore())", for: .normal)
@@ -174,14 +173,10 @@ class ViewController: UIViewController, QuizBrainDelegate {
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             self.counter -= 1
             
-            if self.counter > 50 {
-                print("\(self.counter)")
-            } else {
+            if self.counter <= 50 {
                 self.timer.invalidate()
-                print("Final Score: \(self.counter)")
             }
             
-            //if answer is correct, add to score based on time. If incorrect, do not add to score
         }
     }
     
