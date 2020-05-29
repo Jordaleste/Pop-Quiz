@@ -14,6 +14,7 @@ class QuizBrain {
     static let shared = QuizBrain()
     let insults = InsultManager()
     var quiz = QuestionManager()
+    var soundEffect = SoundManager()
     
     // QuizBrain has a delegate property so it can be set by it's delegate as self. Our ViewController's "newGame" set's itself as the delegate for QuizBrain
     var delegate: QuizBrainDelegate?
@@ -27,6 +28,7 @@ class QuizBrain {
     var questionNumber = 0
     var score = 0
     var numberOfCorrectAnswers = 0
+    var soundToPlay: String?
     
     
 //MARK:- Game Flow Functions
@@ -123,6 +125,18 @@ class QuizBrain {
         }
         
         return insult
+    }
+    
+    func getSound(correctAnswer: Bool) -> String {
+        
+        if correctAnswer {
+            soundToPlay = soundEffect.correctSounds.randomElement()
+            return soundToPlay!
+        } else {
+            soundToPlay = soundEffect.incorrectSounds.randomElement()
+            return soundToPlay!
+        }
+        
     }
     
 //MARK:- Setters

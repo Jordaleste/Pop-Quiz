@@ -11,10 +11,7 @@ import Foundation
 
 
 struct QuestionManager {
-    
-    //Set here to allow to adjust in future updates user choice of quiz type, etc...
-    
-    
+   
     // QuestionManager has a delegate property so it can be set by it's delegate as self. Our QuizBrain's "quiz" set's itself as the delegate for QuestionManager
     var delegate: QuestionManagerDelegate?
     
@@ -27,6 +24,7 @@ struct QuestionManager {
         if let category = category {
             urlString += "&category=\(category)"
         }
+        
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
@@ -43,8 +41,6 @@ struct QuestionManager {
                     }
                 }
             }
-            
-            
             //This runs the API call
             task.resume()
         }
@@ -81,7 +77,7 @@ struct QuestionManager {
 }
 
 
-// MARK: - Protocol to allow QuizBrain to update questions. This is called during our fetchQuestion method below.
+// MARK: - Protocol to allow QuizBrain to update questions. This is called during our fetchQuestion method.
 protocol QuestionManagerDelegate {
     func didUpdateQuestions(questionManager: QuestionManager, questions: QuestionModel)
     func didFailWithError(error: Error)

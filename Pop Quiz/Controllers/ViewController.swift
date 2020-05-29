@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController, QuizBrainDelegate {
     
@@ -22,6 +23,7 @@ class ViewController: UIViewController, QuizBrainDelegate {
     @IBOutlet weak var insultButtonLabel: UILabel!
     @IBOutlet weak var scoreButtonLabel: UIButton!
     
+    var player: AVAudioPlayer!
     
     lazy var buttonArray = [aButton, bButton, cButton, dButton]
     
@@ -31,6 +33,11 @@ class ViewController: UIViewController, QuizBrainDelegate {
     
     var timer = Timer()
     var counter = 100
+    var soundToPlay: String?
+    var doPlaySound = false
+    let playSoundFileProbability = 4
+    let timeAfterAnswerInSeconds = 2.5
+    let scoreCountDownIntervalInSeconds = 0.1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,13 +67,13 @@ class ViewController: UIViewController, QuizBrainDelegate {
         }
     }
     
-//MARK:- Game Play UI Functions
+    //MARK:- Game Play UI Functions
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         
         //Stop the score keeping timer
         timer.invalidate()
-        
+      
         guard let answerChosen = sender.currentTitle else {
             print("No text in sender.currentTitle")
             return
@@ -81,7 +88,10 @@ class ViewController: UIViewController, QuizBrainDelegate {
         if userIsCorrect {
             sender.backgroundColor = .green
             scoreButtonLabel.setTitle("Number of Correct Answers: \(newGame.getNumberOfCorrectAnswers()):  Score: \(newGame.getScore())", for: .normal)
-
+            
+            
+            playRandomSound(isCorrect: true)
+            
         } else {
             sender.backgroundColor? = .red
             sender.setTitleColor(.white, for: .normal)
@@ -90,6 +100,8 @@ class ViewController: UIViewController, QuizBrainDelegate {
                 if i?.currentTitle == correctAnswer {
                     i?.backgroundColor = .green
                 }
+                
+                playRandomSound(isCorrect: false)
             }
         }
         
@@ -98,8 +110,8 @@ class ViewController: UIViewController, QuizBrainDelegate {
         } else {
             //Reset the score keeping counter for next question
             counter = 100
-            //Leave correct answer shown for 1 second, then move on to next question
-            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { _ in
+            //Leave correct answer shown for set time, then move on to next question
+            Timer.scheduledTimer(withTimeInterval: timeAfterAnswerInSeconds, repeats: false) { _ in
                 for i in self.buttonArray {
                     i?.backgroundColor = .white
                     i?.setTitleColor(.red, for: .normal)
@@ -110,7 +122,11 @@ class ViewController: UIViewController, QuizBrainDelegate {
                 for i in [self.cButtonLabel, self.dButtonLabel] {
                     i?.isHidden = false
                 }
-                
+                if self.doPlaySound {
+                    self.player.stop()
+                    self.doPlaySound = false
+                    
+                }
                 self.newGame.nextQuestion()
                 self.updateUI()
             }
@@ -120,6 +136,30 @@ class ViewController: UIViewController, QuizBrainDelegate {
     @IBAction func startOverButtonPressed(_ sender: UIButton) {
         //Dismiss VC and return to Welcome VC for new game
         dismiss(animated: true) {
+        }
+    }
+    
+    func playSound(soundName: String) {
+        let url = Bundle.main.url(forResource: soundName, withExtension: "mp3")
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url!)
+            player.play()
+        } catch {
+            print("Error retrieving souond effect \(error)")
+        }
+    }
+    //Play random sound 1/playSoundFileProbability times
+    func playRandomSound(isCorrect: Bool) {
+        let randomNumberGenerator = Int.random(in: 1...playSoundFileProbability)
+        if randomNumberGenerator == 1 {
+            doPlaySound = true
+        }
+        if doPlaySound {
+            soundToPlay = newGame.getSound(correctAnswer: isCorrect)
+            if soundToPlay != nil {
+                playSound(soundName: soundToPlay!)
+            }
         }
     }
     
@@ -162,7 +202,7 @@ class ViewController: UIViewController, QuizBrainDelegate {
         }
         
         //Score keeping system. Max 100, -1 point every 1/10 second, cap at 50 min. for correct answer
-        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+        timer = Timer.scheduledTimer(withTimeInterval: scoreCountDownIntervalInSeconds, repeats: true) { _ in
             self.counter -= 1
             
             if self.counter <= 50 {
