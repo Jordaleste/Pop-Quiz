@@ -31,28 +31,27 @@ class ViewController: UIViewController, QuizBrainDelegate {
     
     var timer = Timer()
     var counter = 100
-    var numberOfCorrectAnswers = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Set our newGame as the delegate of this instance of QuizBrain
         newGame.delegate = self
         newGame.loadNewQuiz(newGame.categoryChosen!)
-        //let highScore = newGame.getHighScore()
-        //let categoryHighScore = newGame.getCategoryHighScore()
+        
         highScoreLabel.layer.cornerRadius = 5
         highScoreLabel.clipsToBounds = true
-        //TODO: change 500 to highScore and categoryHighScore
         highScoreLabel.text = "All Time Luckiest Score: \(newGame.getHighScore())\n\(newGame.categoryChosen ?? "Chosen Category")\nLuckiest Score: \(newGame.getCategoryHighScore(category: newGame.categoryChosen!))"
+        
         questionLabel.layer.cornerRadius = 5
         questionLabel.clipsToBounds = true
+        
         insultButtonLabel.isHidden = true
         insultButtonLabel.backgroundColor = .green
         insultButtonLabel.layer.cornerRadius = 5
         insultButtonLabel.clipsToBounds = true
+        
         scoreButtonLabel.layer.cornerRadius = 5
         scoreButtonLabel.clipsToBounds = true
-        
         
         for button in buttonArray {
             button?.titleLabel?.minimumScaleFactor = 0.5
@@ -60,6 +59,8 @@ class ViewController: UIViewController, QuizBrainDelegate {
             button?.titleLabel?.adjustsFontSizeToFitWidth = true
         }
     }
+    
+//MARK:- Game Play UI Functions
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         
@@ -70,7 +71,7 @@ class ViewController: UIViewController, QuizBrainDelegate {
             print("No text in sender.currentTitle")
             return
         }
-        
+        //Disable buttons so only 1 answer can be chosen
         for i in buttonArray {
             i?.isUserInteractionEnabled = false
         }
@@ -78,10 +79,8 @@ class ViewController: UIViewController, QuizBrainDelegate {
         let userIsCorrect = newGame.checkAnswer(answerChosen, counter)
         
         if userIsCorrect {
-            numberOfCorrectAnswers += 1
             sender.backgroundColor = .green
             scoreButtonLabel.setTitle("Number of Correct Answers: \(newGame.getNumberOfCorrectAnswers()):  Score: \(newGame.getScore())", for: .normal)
-            //score should be based on time taken to answer
 
         } else {
             sender.backgroundColor? = .red
@@ -99,7 +98,7 @@ class ViewController: UIViewController, QuizBrainDelegate {
         } else {
             //Reset the score keeping counter for next question
             counter = 100
-            
+            //Leave correct answer shown for 1 second, then move on to next question
             Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { _ in
                 for i in self.buttonArray {
                     i?.backgroundColor = .white
@@ -111,6 +110,7 @@ class ViewController: UIViewController, QuizBrainDelegate {
                 for i in [self.cButtonLabel, self.dButtonLabel] {
                     i?.isHidden = false
                 }
+                
                 self.newGame.nextQuestion()
                 self.updateUI()
             }
@@ -118,26 +118,15 @@ class ViewController: UIViewController, QuizBrainDelegate {
     }
     
     @IBAction func startOverButtonPressed(_ sender: UIButton) {
-        
+        //Dismiss VC and return to Welcome VC for new game
         dismiss(animated: true) {
-            
         }
-//        Code to reset the game if same category is selected provided we program an additional option later
-//        for i in self.buttonArray {
-//            i?.backgroundColor = .white
-//            i?.setTitleColor(.red, for: .normal)
-//            i?.isHidden = false
-//            i?.isUserInteractionEnabled = true
-//        }
-//        
-//        scoreButtonLabel.backgroundColor = .red
-//        scoreButtonLabel.setTitleColor(.white, for: .normal)
-//        scoreButtonLabel.setTitle("Score: \(newGame.getScore())", for: .normal)
-//
-//        newGame.loadNewQuiz(newGame.categoryChosen!)
     }
     
+//MARK:- Game Over / Update UI Functions
+    
     func gameOver() {
+        //Set final screen UI, enable start over button
         insultButtonLabel.isHidden = false
         insultButtonLabel.text = "\(newGame.getInsult())"
         scoreButtonLabel.isUserInteractionEnabled = true
@@ -147,13 +136,15 @@ class ViewController: UIViewController, QuizBrainDelegate {
     }
     
     func updateUI() {
-        
+        //Randomize answers from API so correct answer is not in same location every time
         let randomAnswers = newGame.getRandomAnswers()
         
+        //Show question
         questionLabel.text = newGame.getQuestion()
         aButton.setTitle(randomAnswers[0], for: .normal)
         bButton.setTitle(randomAnswers[1], for: .normal)
         
+        //Show answers based on # of available choices from API, which range from 2-4
         if randomAnswers.count > 2 {
             cButton.setTitle(randomAnswers[2], for: .normal)
             
@@ -170,19 +161,19 @@ class ViewController: UIViewController, QuizBrainDelegate {
             self.dButtonLabel.isHidden = true
         }
         
+        //Score keeping system. Max 100, -1 point every 1/10 second, cap at 50 min. for correct answer
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             self.counter -= 1
             
             if self.counter <= 50 {
                 self.timer.invalidate()
             }
-            
         }
     }
-    
+
+    //MARK:- Protocol Functions
     //Handles protocol requirement from QuizBrainDelegate. This (VERY IMPORTANT) delays the refreshing of the UI until the API call is complete. Otherwise, APP can crash if API call takes too long, which is does, every time lol.
     func finishedUpdatingQuestions() {
         updateUI( )
     }
-    
 }

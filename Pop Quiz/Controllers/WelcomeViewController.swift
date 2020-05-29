@@ -25,6 +25,7 @@ class WelcomeViewController: UIViewController {
     
     @IBAction func startButtonPressed(_ sender: UIButton) {
         
+        //Setting the category user chooses to our QuizBrain singleton to pass to QuizBrain
         QuizBrain.shared.categoryChosen = chosenCategory
         self.performSegue(withIdentifier: "gotoQuiz", sender: self)
     }

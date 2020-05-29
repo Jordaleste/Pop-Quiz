@@ -13,23 +13,23 @@ class QuizBrain {
     // Setting up singleton to handle data management from multiple view controllers
     static let shared = QuizBrain()
     let insults = InsultManager()
-    var categoryChosen: String? = nil
+    var quiz = QuestionManager()
     
     // QuizBrain has a delegate property so it can be set by it's delegate as self. Our ViewController's "newGame" set's itself as the delegate for QuizBrain
     var delegate: QuizBrainDelegate?
     
-   
-    var quiz = QuestionManager()
-    var questionNumber = 0
-    
-    //Setting up the arrays to hold the questions and answers
+    //Setting up the arrays to hold the questions and answers. Incorrect Answers come as an array of arrays from API
     var questionArray = [String]()
     var correctAnswerArray = [String]()
-    //Incorrect Answers come in an array of arrays of Strings from API
     var incorrectAnswersArray = [[String]]()
     
+    var categoryChosen: String? = nil
+    var questionNumber = 0
     var score = 0
     var numberOfCorrectAnswers = 0
+    
+    
+//MARK:- Game Flow Functions
     
     func loadNewQuiz(_ chosenCategory: String) {
         questionArray = []
@@ -42,15 +42,32 @@ class QuizBrain {
         //Set our quiz as the delegate of this instance of QuestionManager
         self.quiz.delegate = self
         
-        //getting category ID from CategoryManager
+        //getting category ID from CategoryManager with the categoryChosen in Welcome VC
         var id: Int?
         if let category = categoryChosen {
         guard let categoryID = CategoryManager.categories[category] else {fatalError("Category chosen does not exist")}
             id = categoryID
         }
          // Get new set of questions as an instance of QuestionManager passing in the cattegory chosen id
-        quiz.fetchQuestions(category: id) //need to pass in category ID here
+        quiz.fetchQuestions(category: id)
     }
+    
+        func nextQuestion() {
+        questionNumber += 1
+    }
+    
+//TODO:- Set to 9 after testing is complete
+    func isGameOver() -> Bool {
+        if questionNumber == 3 {
+            checkHighScore(score)
+            checkCategoryHighScore(category: categoryChosen!, score: score)
+            return true
+        } else {
+            return false
+        }
+    }
+    
+//MARK:- Getters
     
     func getQuestion() -> String {
         let quetstion = questionArray[questionNumber]
@@ -69,20 +86,6 @@ class QuizBrain {
         return answersRandomized
     }
     
-    func nextQuestion() { 
-        questionNumber += 1
-    }
-    
-    func checkAnswer(_ userAnswer: String, _ counter: Int) -> Bool {
-        if userAnswer == correctAnswerArray[questionNumber] {
-            score += counter
-            numberOfCorrectAnswers += 1
-            return true
-        } else {
-            return false
-        }
-    }
-    
     func getScore() -> Int {
         return score
     }
@@ -96,30 +99,8 @@ class QuizBrain {
         return UserDefaults.standard.integer(forKey: "\(category)HighScore")
     }
     
-    func checkHighScore(_ score: Int) {
-        if score > getHighScore() {
-            UserDefaults.standard.set(score, forKey: "highScore")
-        }
-    }
-    
-    func checkCategoryHighScore(category: String, score: Int) {
-        if score > getCategoryHighScore(category: category) {
-            UserDefaults.standard.set(score, forKey: "\(category)HighScore")
-        }
-    }
-    
     func getNumberOfCorrectAnswers() -> Int {
         return numberOfCorrectAnswers
-    }
-    
-    func isGameOver() -> Bool { // set to 9 after testing is complete
-        if questionNumber == 3 {
-            checkHighScore(score)
-            checkCategoryHighScore(category: categoryChosen!, score: score)
-            return true
-        } else {
-            return false
-        }
     }
     
     func getInsult() -> String {
@@ -141,18 +122,31 @@ class QuizBrain {
             insult = "I have nothing to say"
         }
         
-//        if score == 0 {
-//            saying = "Horrible"
-//        } else if score > 0 && score < 100 {
-//            saying = "From 1 - 99"
-//        } else if score >= 100 && score < 250 {
-//            saying = "From 100 - 249"
-//        } else {
-//            saying = "0"
-//        }
-        
-        
         return insult
+    }
+    
+//MARK:- Setters
+    
+    func checkAnswer(_ userAnswer: String, _ counter: Int) -> Bool {
+        if userAnswer == correctAnswerArray[questionNumber] {
+            score += counter
+            numberOfCorrectAnswers += 1
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func checkHighScore(_ score: Int) {
+        if score > getHighScore() {
+            UserDefaults.standard.set(score, forKey: "highScore")
+        }
+    }
+    
+    func checkCategoryHighScore(category: String, score: Int) {
+        if score > getCategoryHighScore(category: category) {
+            UserDefaults.standard.set(score, forKey: "\(category)HighScore")
+        }
     }
 }
 
