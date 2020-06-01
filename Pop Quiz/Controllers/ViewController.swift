@@ -24,7 +24,7 @@ class ViewController: UIViewController, QuizBrainDelegate {
     @IBOutlet weak var scoreButtonLabel: UIButton!
     
     var player: AVAudioPlayer!
-    
+    var feedBackGenerator : UINotificationFeedbackGenerator? = nil
     lazy var buttonArray = [aButton, bButton, cButton, dButton]
     
     // Get new game, instance of QuizBrain
@@ -86,6 +86,7 @@ class ViewController: UIViewController, QuizBrainDelegate {
         let userIsCorrect = newGame.checkAnswer(answerChosen, counter)
         
         if userIsCorrect {
+            feedBackGenerator?.notificationOccurred(.success)
             sender.backgroundColor = .green
             scoreButtonLabel.setTitle("Number of Correct Answers: \(newGame.getNumberOfCorrectAnswers()):  Score: \(newGame.getScore())", for: .normal)
             
@@ -93,6 +94,7 @@ class ViewController: UIViewController, QuizBrainDelegate {
             playRandomSound(isCorrect: true)
             
         } else {
+            feedBackGenerator?.notificationOccurred(.error)
             sender.backgroundColor? = .red
             sender.setTitleColor(.white, for: .normal)
             let correctAnswer = newGame.getCorrectAnswer()
@@ -155,6 +157,7 @@ class ViewController: UIViewController, QuizBrainDelegate {
         if randomNumberGenerator == 1 {
             doPlaySound = true
         }
+        
         if doPlaySound {
             soundToPlay = newGame.getSound(correctAnswer: isCorrect)
             if soundToPlay != nil {
@@ -166,6 +169,7 @@ class ViewController: UIViewController, QuizBrainDelegate {
 //MARK:- Game Over / Update UI Functions
     
     func gameOver() {
+        feedBackGenerator = nil
         //Set final screen UI, enable start over button
         insultButtonLabel.isHidden = false
         insultButtonLabel.text = "\(newGame.getInsult())"
@@ -178,7 +182,8 @@ class ViewController: UIViewController, QuizBrainDelegate {
     func updateUI() {
         //Randomize answers from API so correct answer is not in same location every time
         let randomAnswers = newGame.getRandomAnswers()
-        
+        feedBackGenerator = UINotificationFeedbackGenerator()
+        feedBackGenerator?.prepare()
         //Show question
         questionLabel.text = newGame.getQuestion()
         aButton.setTitle(randomAnswers[0], for: .normal)

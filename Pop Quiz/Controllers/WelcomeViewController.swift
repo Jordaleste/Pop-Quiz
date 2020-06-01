@@ -43,20 +43,15 @@ extension WelcomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         return categories.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return categories[row]
-    }
-    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         chosenCategory = categories[row]
-        
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView
     {
         let pickerLabel = UILabel()
-        
         pickerLabel.text = categories[row]
+        pickerLabel.textColor = .black
         pickerLabel.font = UIFont.boldSystemFont(ofSize: 20)
         pickerLabel.layer.borderColor = UIColor.red.cgColor
         pickerLabel.layer.borderWidth = 2
@@ -65,5 +60,5 @@ extension WelcomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         pickerLabel.textAlignment = NSTextAlignment.center
         return pickerLabel
     }
-    
+ 
 }
