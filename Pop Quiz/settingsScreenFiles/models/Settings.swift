@@ -16,4 +16,5 @@ struct Settings {
 //    static var gameTwitterWeb = "https://www.twitter.com/gradientsgame"
     static let email = "youknownothing@charlieeison.com"
     static let gameName = "You Know Nothing!"
+    
 }

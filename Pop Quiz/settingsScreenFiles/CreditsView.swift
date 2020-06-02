@@ -11,6 +11,7 @@ import SwiftUI
 struct CreditsView: View {
     var acasaURL: URL = URL(string: "https://www.acasaconsulting.com")!
     var gradientGameURL: URL = URL(string: "https://www.twitter.com/gradientsgame")!
+    var triviaDBURL: URL = URL(string: "https://opentdb.com")!
     var body: some View {
         NavigationView {
             ScrollView {
@@ -29,6 +30,13 @@ struct CreditsView: View {
                 
                 SettingsRow(imageName: "eyedropper.halffull", title: "Gradient Game") {
                     UIApplication.shared.open(self.gradientGameURL)
+                }
+                .padding()
+                .settingsBackground()
+                
+                
+                SettingsRow(imageName: "eyedropper.halffull", title: "Open Trivia Database") {
+                    UIApplication.shared.open(self.triviaDBURL)
                 }
                 .padding()
                 .settingsBackground()
