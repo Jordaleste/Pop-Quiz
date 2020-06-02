@@ -26,7 +26,6 @@ class WelcomeViewController: UIViewController {
     @IBAction func settingsButtonPressed(_ sender: UIButton) {
         
         let settingsVC = UIHostingController(rootView: SettingsView())
-        settingsVC.overrideUserInterfaceStyle = .dark
         present(settingsVC, animated: true)
     }
     

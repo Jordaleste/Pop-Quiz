@@ -589,6 +589,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = Q9ZR292R7K;
 				INFOPLIST_FILE = "Pop Quiz/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -599,7 +600,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.charlieeison.Pop-Quiz";
 				PRODUCT_NAME = "You Know Nothing Trivia";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -608,6 +609,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = Q9ZR292R7K;
 				INFOPLIST_FILE = "Pop Quiz/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -618,7 +620,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.charlieeison.Pop-Quiz";
 				PRODUCT_NAME = "You Know Nothing Trivia";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
