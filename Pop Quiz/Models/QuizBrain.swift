@@ -58,9 +58,8 @@ class QuizBrain {
         questionNumber += 1
     }
     
-//TODO:- Set to 9 after testing is complete
     func isGameOver() -> Bool {
-        if questionNumber == 3 {
+        if questionNumber == 9 {
             checkHighScore(score)
             checkCategoryHighScore(category: categoryChosen!, score: score)
             return true

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         // Override point for customization after application launch.
+        
+        //Keep track of number of times App has been opened
+        var numberTimesOpened = UserDefaults.standard.integer(forKey: "appOpens")
+        numberTimesOpened += 1
+        UserDefaults.standard.set(numberTimesOpened, forKey: "appOpens")
+        
+        if numberTimesOpened > 5 {
+            SKStoreReviewController.requestReview()
+        }
+        
         return true
     }
 

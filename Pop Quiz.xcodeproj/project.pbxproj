@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		19C2E0E2247AC0E800E46A1B /* InsultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C2E0E1247AC0E800E46A1B /* InsultManager.swift */; };
+		19CFD1E22485A24D0024A9D1 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFD1DB2485A24D0024A9D1 /* AboutView.swift */; };
+		19CFD1E32485A24D0024A9D1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFD1DC2485A24D0024A9D1 /* SettingsView.swift */; };
+		19CFD1E42485A24D0024A9D1 /* ShareSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFD1DD2485A24D0024A9D1 /* ShareSheetView.swift */; };
+		19CFD1E52485A24D0024A9D1 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFD1DE2485A24D0024A9D1 /* MailView.swift */; };
+		19CFD1E62485A24D0024A9D1 /* AppVersionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFD1DF2485A24D0024A9D1 /* AppVersionRow.swift */; };
+		19CFD1E72485A24D0024A9D1 /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFD1E02485A24D0024A9D1 /* SettingsRow.swift */; };
+		19CFD1E82485A24D0024A9D1 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFD1E12485A24D0024A9D1 /* CreditsView.swift */; };
+		19CFD1EB2485A2900024A9D1 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFD1EA2485A2900024A9D1 /* SettingsViewModel.swift */; };
+		19CFD1EE2485A2B40024A9D1 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFD1ED2485A2B40024A9D1 /* Settings.swift */; };
+		19CFD1F12485A2C00024A9D1 /* FeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFD1F02485A2C00024A9D1 /* FeedbackManager.swift */; };
+		19CFD1F42485A2C90024A9D1 /* extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFD1F32485A2C90024A9D1 /* extension+View.swift */; };
 		72A27F2B2474110400454578 /* CategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A27F2A2474110400454578 /* CategoryManager.swift */; };
 		72C0CEBC2481365600363A1A /* Taunt_troll troll troll_LittleGirlGamer-www.FesliyanStudios.com.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 72C0CEAA2481365600363A1A /* Taunt_troll troll troll_LittleGirlGamer-www.FesliyanStudios.com.mp3 */; };
 		72C0CEBD2481365600363A1A /* Taunt__You got pwned_LittleGirlGamer-www.FesliyanStudios.com.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 72C0CEAB2481365600363A1A /* Taunt__You got pwned_LittleGirlGamer-www.FesliyanStudios.com.mp3 */; };
@@ -62,6 +73,17 @@
 
 /* Begin PBXFileReference section */
 		19C2E0E1247AC0E800E46A1B /* InsultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsultManager.swift; sourceTree = "<group>"; };
+		19CFD1DB2485A24D0024A9D1 /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		19CFD1DC2485A24D0024A9D1 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		19CFD1DD2485A24D0024A9D1 /* ShareSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareSheetView.swift; sourceTree = "<group>"; };
+		19CFD1DE2485A24D0024A9D1 /* MailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
+		19CFD1DF2485A24D0024A9D1 /* AppVersionRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersionRow.swift; sourceTree = "<group>"; };
+		19CFD1E02485A24D0024A9D1 /* SettingsRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
+		19CFD1E12485A24D0024A9D1 /* CreditsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
+		19CFD1EA2485A2900024A9D1 /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		19CFD1ED2485A2B40024A9D1 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		19CFD1F02485A2C00024A9D1 /* FeedbackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackManager.swift; sourceTree = "<group>"; };
+		19CFD1F32485A2C90024A9D1 /* extension+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+View.swift"; sourceTree = "<group>"; };
 		72A27F2A2474110400454578 /* CategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManager.swift; sourceTree = "<group>"; };
 		72C0CEAA2481365600363A1A /* Taunt_troll troll troll_LittleGirlGamer-www.FesliyanStudios.com.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Taunt_troll troll troll_LittleGirlGamer-www.FesliyanStudios.com.mp3"; sourceTree = "<group>"; };
 		72C0CEAB2481365600363A1A /* Taunt__You got pwned_LittleGirlGamer-www.FesliyanStudios.com.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Taunt__You got pwned_LittleGirlGamer-www.FesliyanStudios.com.mp3"; sourceTree = "<group>"; };
@@ -100,7 +122,7 @@
 		72C0CEDF2481403F00363A1A /* Complaining_you're lucky_LittleGirlGamer-www.FesliyanStudios.com.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Complaining_you're lucky_LittleGirlGamer-www.FesliyanStudios.com.mp3"; sourceTree = "<group>"; };
 		72C0CEE02481403F00363A1A /* Multiple-FireWorks-www.fesliyanstudios.com.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Multiple-FireWorks-www.fesliyanstudios.com.mp3"; sourceTree = "<group>"; };
 		72C0CEF3248140A500363A1A /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
-		8240B528246C9544009DC5B4 /* Pop Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pop Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8240B528246C9544009DC5B4 /* You Know Nothing Trivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "You Know Nothing Trivia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8240B52B246C9544009DC5B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8240B52D246C9544009DC5B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8240B52F246C9544009DC5B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +149,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19CFD1DA2485A24D0024A9D1 /* settingsScreenFiles */ = {
+			isa = PBXGroup;
+			children = (
+				19CFD1F22485A2C90024A9D1 /* extensions */,
+				19CFD1EF2485A2C00024A9D1 /* managers */,
+				19CFD1EC2485A2B40024A9D1 /* models */,
+				19CFD1E92485A2900024A9D1 /* viewModels */,
+				19CFD1EA2485A2900024A9D1 /* SettingsViewModel.swift */,
+				19CFD1DB2485A24D0024A9D1 /* AboutView.swift */,
+				19CFD1DC2485A24D0024A9D1 /* SettingsView.swift */,
+				19CFD1DD2485A24D0024A9D1 /* ShareSheetView.swift */,
+				19CFD1DE2485A24D0024A9D1 /* MailView.swift */,
+				19CFD1DF2485A24D0024A9D1 /* AppVersionRow.swift */,
+				19CFD1E02485A24D0024A9D1 /* SettingsRow.swift */,
+				19CFD1E12485A24D0024A9D1 /* CreditsView.swift */,
+			);
+			path = settingsScreenFiles;
+			sourceTree = "<group>";
+		};
+		19CFD1E92485A2900024A9D1 /* viewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = viewModels;
+			sourceTree = "<group>";
+		};
+		19CFD1EC2485A2B40024A9D1 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				19CFD1ED2485A2B40024A9D1 /* Settings.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		19CFD1EF2485A2C00024A9D1 /* managers */ = {
+			isa = PBXGroup;
+			children = (
+				19CFD1F02485A2C00024A9D1 /* FeedbackManager.swift */,
+			);
+			path = managers;
+			sourceTree = "<group>";
+		};
+		19CFD1F22485A2C90024A9D1 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				19CFD1F32485A2C90024A9D1 /* extension+View.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		726A518724756C38005E08CB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,7 +271,7 @@
 		8240B529246C9544009DC5B4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8240B528246C9544009DC5B4 /* Pop Quiz.app */,
+				8240B528246C9544009DC5B4 /* You Know Nothing Trivia.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,6 +288,7 @@
 				8240B534246C9546009DC5B4 /* Assets.xcassets */,
 				8240B536246C9546009DC5B4 /* LaunchScreen.storyboard */,
 				8240B539246C9547009DC5B4 /* Info.plist */,
+				19CFD1DA2485A24D0024A9D1 /* settingsScreenFiles */,
 			);
 			path = "Pop Quiz";
 			sourceTree = "<group>";
@@ -259,7 +332,7 @@
 			);
 			name = "Pop Quiz";
 			productName = "Pop Quiz";
-			productReference = 8240B528246C9544009DC5B4 /* Pop Quiz.app */;
+			productReference = 8240B528246C9544009DC5B4 /* You Know Nothing Trivia.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -350,17 +423,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				8240B548246EFBF8009DC5B4 /* QuestionModel.swift in Sources */,
+				19CFD1F42485A2C90024A9D1 /* extension+View.swift in Sources */,
 				9789F2602474D1EC00B0651C /* WelcomeViewController.swift in Sources */,
 				8240B530246C9544009DC5B4 /* ViewController.swift in Sources */,
 				72A27F2B2474110400454578 /* CategoryManager.swift in Sources */,
+				19CFD1E22485A24D0024A9D1 /* AboutView.swift in Sources */,
 				8240B52C246C9544009DC5B4 /* AppDelegate.swift in Sources */,
 				72C0CEF4248140A500363A1A /* SoundManager.swift in Sources */,
+				19CFD1E52485A24D0024A9D1 /* MailView.swift in Sources */,
+				19CFD1E82485A24D0024A9D1 /* CreditsView.swift in Sources */,
+				19CFD1E62485A24D0024A9D1 /* AppVersionRow.swift in Sources */,
+				19CFD1E42485A24D0024A9D1 /* ShareSheetView.swift in Sources */,
+				19CFD1E32485A24D0024A9D1 /* SettingsView.swift in Sources */,
 				8240B540246CCFD7009DC5B4 /* SwiftUIView.swift in Sources */,
 				8240B546246EF6FA009DC5B4 /* QuestionData.swift in Sources */,
+				19CFD1F12485A2C00024A9D1 /* FeedbackManager.swift in Sources */,
 				8240B543246EED59009DC5B4 /* QuestionManager.swift in Sources */,
+				19CFD1EB2485A2900024A9D1 /* SettingsViewModel.swift in Sources */,
 				8240B52E246C9544009DC5B4 /* SceneDelegate.swift in Sources */,
 				19C2E0E2247AC0E800E46A1B /* InsultManager.swift in Sources */,
+				19CFD1EE2485A2B40024A9D1 /* Settings.swift in Sources */,
 				8240B54A246F48CA009DC5B4 /* QuizBrain.swift in Sources */,
+				19CFD1E72485A24D0024A9D1 /* SettingsRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,7 +597,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.charlieeison.Pop-Quiz";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "You Know Nothing Trivia";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -532,7 +616,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.charlieeison.Pop-Quiz";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "You Know Nothing Trivia";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

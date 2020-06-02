@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 class WelcomeViewController: UIViewController {
     
@@ -22,6 +23,12 @@ class WelcomeViewController: UIViewController {
         self.categoryPicker.dataSource = self
     }
     
+    @IBAction func settingsButtonPressed(_ sender: UIButton) {
+        
+        let settingsVC = UIHostingController(rootView: SettingsView())
+        settingsVC.overrideUserInterfaceStyle = .dark
+        present(settingsVC, animated: true)
+    }
     
     @IBAction func startButtonPressed(_ sender: UIButton) {
         

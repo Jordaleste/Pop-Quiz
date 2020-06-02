@@ -10,7 +10,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="ciR-O2-vFB">
             <objects>
-                <viewController id="iNH-hg-KAY" customClass="WelcomeViewController" customModule="Pop_Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iNH-hg-KAY" customClass="WelcomeViewController" customModule="You_Know_Nothing_Trivia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MAc-Ow-wgm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,8 +19,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pop Quiz!" borderStyle="roundedRect" placeholder="Quiz Interface" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y6e-fZ-x5n">
-                                <rect key="frame" x="103.5" y="119" width="207.5" height="45.5"/>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="You Know Nothing!" borderStyle="roundedRect" placeholder="Quiz Interface" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y6e-fZ-x5n">
+                                <rect key="frame" x="69.5" y="119" width="275" height="45.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45.5" id="XHr-6r-hNy"/>
@@ -58,9 +58,20 @@
                                     <action selector="startOverButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RkO-Qy-sMe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAA-m4-0yC">
+                                <rect key="frame" x="357" y="54" width="27" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="gear" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="settingsButtonPressed:" destination="iNH-hg-KAY" eventType="touchUpInside" id="Raj-6o-7lD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="rAA-m4-0yC" firstAttribute="top" secondItem="FiA-70-gb7" secondAttribute="top" constant="10" id="001-mv-hm5"/>
                             <constraint firstItem="LHs-Ky-DM3" firstAttribute="trailing" secondItem="FiA-70-gb7" secondAttribute="trailing" id="HJx-kf-xp6"/>
                             <constraint firstItem="Ual-9c-YAA" firstAttribute="centerX" secondItem="MAc-Ow-wgm" secondAttribute="centerX" id="Nq7-Vf-3BH"/>
                             <constraint firstItem="yr6-wO-Le9" firstAttribute="centerX" secondItem="MAc-Ow-wgm" secondAttribute="centerX" id="PBs-WH-h9l"/>
@@ -72,6 +83,7 @@
                             <constraint firstItem="l3L-ht-1sS" firstAttribute="centerX" secondItem="MAc-Ow-wgm" secondAttribute="centerX" id="dYZ-9Q-heN"/>
                             <constraint firstItem="LHs-Ky-DM3" firstAttribute="top" secondItem="MAc-Ow-wgm" secondAttribute="top" id="dtR-qX-8cl"/>
                             <constraint firstAttribute="bottom" secondItem="LHs-Ky-DM3" secondAttribute="bottom" id="iQW-Z4-eHb"/>
+                            <constraint firstItem="FiA-70-gb7" firstAttribute="trailing" secondItem="rAA-m4-0yC" secondAttribute="trailing" constant="30" id="rQr-lg-d6L"/>
                             <constraint firstItem="l3L-ht-1sS" firstAttribute="top" secondItem="y6e-fZ-x5n" secondAttribute="bottom" constant="75" id="sn4-gO-H7a"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FiA-70-gb7"/>
@@ -88,7 +100,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pop_Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="You_Know_Nothing_Trivia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,8 +109,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pop Quiz!" borderStyle="roundedRect" placeholder="Quiz Interface" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HAY-za-xuT">
-                                <rect key="frame" x="103.5" y="100" width="207.5" height="45.5"/>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="You Know Nothing!" borderStyle="roundedRect" placeholder="Quiz Interface" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HAY-za-xuT">
+                                <rect key="frame" x="69.5" y="100" width="275" height="45.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45.5" id="Ikp-mF-BP4"/>
@@ -128,7 +140,7 @@
                                                     <constraint firstAttribute="height" constant="36" id="hXR-tv-U1b"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <state key="normal" title="You">
+                                                <state key="normal" title="Try">
                                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -155,7 +167,7 @@
                                                     <constraint firstAttribute="height" constant="36" id="sdV-m7-H0E"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <state key="normal" title="Will">
+                                                <state key="normal" title="Not">
                                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -182,7 +194,7 @@
                                                     <constraint firstAttribute="height" constant="36" id="Zde-Sa-K4x"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <state key="normal" title="Be">
+                                                <state key="normal" title="To">
                                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -212,7 +224,7 @@
                                                     <constraint firstAttribute="height" constant="36" id="jAr-5A-p17"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <state key="normal" title="Awesome!">
+                                                <state key="normal" title="Suck!">
                                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -238,7 +250,7 @@
                                     <action selector="startOverButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oV2-Z5-zEU"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Welcome to Pop Quiz!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfb-az-3kW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Nothing At All..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfb-az-3kW">
                                 <rect key="frame" x="57" y="292" width="300" height="27.5"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -319,5 +331,6 @@
     </scenes>
     <resources>
         <image name="SmileQuestionMark" width="1125" height="2436"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
     </resources>
 </document>
